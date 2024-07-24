@@ -62,9 +62,17 @@ Follow the instructions below to set up the development environment:
 
 ### API Endpoints
 
+User<br/>
 POST /v1/users/register <br/>
 POST /v1/users/login <br/>
 PUT /v1/users/status <br/>
+
+Person<br/>
+POST    /v1/pessoas <br/>
+PUT     /v1/pessoas/:id <br/>
+DELETE  /v1/pessoas/:id <br/>
+GET     /v1/pessoas/:id <br/>
+GET     /v1/pessoas <br/>
 
 
 
