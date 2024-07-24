@@ -1,5 +1,6 @@
 // src/entity/User.ts
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn , OneToMany} from 'typeorm';
+import { Person } from './Person';
 
 @Entity()
 export class User {
@@ -17,6 +18,9 @@ export class User {
 
   @Column({ default: 'active' })
   status: string;  // Pode ser 'active' ou 'inactive'
+
+  @OneToMany(() => Person, person => person.user)
+  persons: Person[];
 
   @CreateDateColumn({ type: 'timestamp' })
   createdAt: Date;

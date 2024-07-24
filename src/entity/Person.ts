@@ -1,59 +1,66 @@
 // src/entity/Person.ts
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne } from 'typeorm';
+import { User } from './User';
 
 @Entity()
 export class Person {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @ManyToOne(() => User, user => user.persons)
+  user: User;
+
   @Column()
-  nome: string; // Nome completo
+  userId: number; // Adicione esta coluna para armazenar o ID do usuário
 
-  @Column({nullable: true})
-  cpf?: string; // CPF (Cadastro de Pessoa Física) (opcional)
+  @Column()
+  nome: string;
 
-  @Column({nullable: true})
-  rg?: string; // RG (Registro Geral) (opcional)
+  @Column({ nullable: true })
+  cpf?: string;
 
-  @Column({nullable: true})
-  dataNascimento?: Date; // Data de nascimento (opcional)
+  @Column({ nullable: true })
+  rg?: string;
 
-  @Column({nullable: true})
-  numeroCarteiraTrabalho?: string; // Número da carteira de trabalho (opcional)
+  @Column({ nullable: true })
+  dataNascimento?: Date;
 
-  @Column({nullable: true})
-  email?: string; // E-mail (deve ser único) (opcional)
+  @Column({ nullable: true })
+  numeroCarteiraTrabalho?: string;
 
-  @Column({nullable: true})
-  dataAdmissao?: Date; // Data da admissão (opcional)
+  @Column({ nullable: true })
+  email?: string;
 
-  @Column({nullable: true})
-  nomeMae?: string; // Nome da mãe (opcional)
- 
-  @Column({nullable: true})
-  nomePai?: string; // Nome do pai (opcional)
+  @Column({ nullable: true })
+  dataAdmissao?: Date;
 
-  @Column({nullable: true})
-  endereco?: string; // Endereço (opcional) 
+  @Column({ nullable: true })
+  nomeMae?: string;
 
-  @Column({nullable: true})
-  telefone?: string; // Telefone (opcional)
+  @Column({ nullable: true })
+  nomePai?: string;
 
-  @Column({nullable: true})
-  estadoCivil?: string; // Estado civil (opcional)
+  @Column({ nullable: true })
+  endereco?: string;
 
-  @Column({nullable: true})
-  funcao?: string; // Função no trabalho (opcional)
+  @Column({ nullable: true })
+  telefone?: string;
 
-  @Column({nullable: true})
-  genero?: string; // Gênero (opcional)
+  @Column({ nullable: true })
+  estadoCivil?: string;
 
-  @Column({nullable: true})
-  celular?: string; // Celular (opcional)
+  @Column({ nullable: true })
+  funcao?: string;
+
+  @Column({ nullable: true })
+  genero?: string;
+
+  @Column({ nullable: true })
+  celular?: string;
 
   @CreateDateColumn({ type: 'timestamp' })
-  createdAt: Date; // Data de criação do registro
+  createdAt: Date;
 
   @UpdateDateColumn({ type: 'timestamp' })
-  updatedAt: Date; // Data da última atualização
+  updatedAt: Date;
 }

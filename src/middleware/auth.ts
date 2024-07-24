@@ -1,20 +1,33 @@
-// src/middleware/auth.ts
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
+import { AppDataSource } from '../data-source';
+import { User } from '../entity/User';
 
-export const authenticateToken = (req: Request, res: Response, next: NextFunction) => {
-  const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1]; // Pega o token depois de "Bearer"
+interface AuthenticatedRequest extends Request {
+  user?: User;
+}
 
-  if (!token) {
-    return res.status(401).json({ message: 'Access token is missing or invalid' });
-  }
+export const authenticateToken = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+  const authHeader = req.headers.authorization;
 
-  jwt.verify(token, process.env.JWT_SECRET!, (err, user) => {
-    if (err) {
-      return res.status(403).json({ message: 'Access token is invalid or expired' });
+  if (authHeader) {
+    const token = authHeader.split(' ')[1];
+
+    try {
+      const decoded: any = jwt.verify(token, process.env.JWT_SECRET as string);
+      const userRepository = AppDataSource.getRepository(User);
+      const user = await userRepository.findOneBy({ id: decoded.userId });
+
+      if (user) {
+        req.user = user;
+        return next();
+      } else {
+        return res.status(403).json({ message: 'User not found' });
+      }
+    } catch (error) {
+      return res.status(403).json({ message: 'Forbidden' });
     }
-    req.user = user;
-    next();
-  });
+  } else {
+    return res.status(401).json({ message: 'Unauthorized' });
+  }
 };
