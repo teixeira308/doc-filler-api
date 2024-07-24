@@ -1,13 +1,18 @@
 // src/index.ts
 require("dotenv").config()
 import 'reflect-metadata';
+
 import { AppDataSource } from './data-source';
 import express from 'express';
 import userRoutes from './routes/userRoutes';
 import personRoutes from './routes/personRoutes';
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('../swagger.json'); // ou swagger.yaml
 const app = express();
 app.use(express.json());
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 
 AppDataSource.initialize()

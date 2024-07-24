@@ -1,0 +1,412 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "User and Person API",
+      "version": "1.0.0",
+      "description": "API for managing users and persons."
+    },
+    "servers": [
+      {
+        "url": "http://localhost:3000",
+        "description": "Local server"
+      }
+    ],
+    "paths": {
+      "/users": {
+        "get": {
+          "summary": "List all users",
+          "responses": {
+            "200": {
+              "description": "A list of users",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "summary": "Create a new user",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "User created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/users/{userId}": {
+        "get": {
+          "summary": "Get a user by ID",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "User details",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "User not found"
+            }
+          }
+        },
+        "put": {
+          "summary": "Update a user by ID",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "User updated",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "User not found"
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete a user by ID",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "User deleted"
+            },
+            "404": {
+              "description": "User not found"
+            }
+          }
+        }
+      },
+      "/persons": {
+        "get": {
+          "summary": "List all persons",
+          "responses": {
+            "200": {
+              "description": "A list of persons",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Person"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "summary": "Create a new person",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Person"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Person created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Person"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/persons/{personId}": {
+        "get": {
+          "summary": "Get a person by ID",
+          "parameters": [
+            {
+              "name": "personId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Person details",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Person"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Person not found"
+            }
+          }
+        },
+        "put": {
+          "summary": "Update a person by ID",
+          "parameters": [
+            {
+              "name": "personId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Person"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Person updated",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Person"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Person not found"
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete a person by ID",
+          "parameters": [
+            {
+              "name": "personId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "Person deleted"
+            },
+            "404": {
+              "description": "Person not found"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "User": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "example": 1
+            },
+            "name": {
+              "type": "string",
+              "example": "John Doe"
+            },
+            "email": {
+              "type": "string",
+              "example": "john.doe@example.com"
+            },
+            "password": {
+              "type": "string",
+              "example": "password123"
+            },
+            "status": {
+              "type": "string",
+              "example": "active"
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time",
+              "example": "2024-01-01T00:00:00Z"
+            },
+            "updatedAt": {
+              "type": "string",
+              "format": "date-time",
+              "example": "2024-01-01T00:00:00Z"
+            }
+          },
+          "required": ["id", "name", "email", "password", "status", "createdAt", "updatedAt"]
+        },
+        "Person": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "example": 1
+            },
+            "nome": {
+              "type": "string",
+              "example": "Jane Doe"
+            },
+            "cpf": {
+              "type": "string",
+              "example": "123.456.789-00"
+            },
+            "rg": {
+              "type": "string",
+              "example": "12.345.678-9"
+            },
+            "dataNascimento": {
+              "type": "string",
+              "format": "date",
+              "example": "1990-01-01"
+            },
+            "numeroCarteiraTrabalho": {
+              "type": "string",
+              "example": "1234567890"
+            },
+            "email": {
+              "type": "string",
+              "example": "jane.doe@example.com"
+            },
+            "dataAdmissao": {
+              "type": "string",
+              "format": "date",
+              "example": "2024-01-01"
+            },
+            "nomeMae": {
+              "type": "string",
+              "example": "Maria Doe"
+            },
+            "nomePai": {
+              "type": "string",
+              "example": "José Doe"
+            },
+            "endereco": {
+              "type": "string",
+              "example": "Rua das Flores, 123"
+            },
+            "telefone": {
+              "type": "string",
+              "example": "+55 11 98765-4321"
+            },
+            "estadoCivil": {
+              "type": "string",
+              "example": "Casado"
+            },
+            "funcao": {
+              "type": "string",
+              "funcao": {
+                "type": "string",
+                "example": "Analista"
+              },
+              "genero": {
+                "type": "string",
+                "example": "Feminino"
+              },
+              "celular": {
+                "type": "string",
+                "example": "+55 11 99999-9999"
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2024-01-01T00:00:00Z"
+              },
+              "updatedAt": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2024-01-01T00:00:00Z"
+              }
+            },
+            "required": [
+              "id", "nome", "createdAt", "updatedAt"
+            ]
+          }
+        }
+      }
+    }
+}    
+  
