@@ -1,4 +1,4 @@
-// src/entity/Pessoa.ts
+// src/entity/Person.ts
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity()
@@ -6,54 +6,54 @@ export class Person {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: 'varchar', length: 100 })
+  @Column()
   nome: string; // Nome completo
 
-  @Column({ type: 'varchar', length: 11, unique: true })
-  cpf: string; // CPF (Cadastro de Pessoa Física)
+  @Column({nullable: true})
+  cpf?: string; // CPF (Cadastro de Pessoa Física) (opcional)
 
-  @Column({ type: 'varchar', length: 20, unique: true })
-  rg: string; // RG (Registro Geral)
+  @Column({nullable: true})
+  rg?: string; // RG (Registro Geral) (opcional)
 
-  @Column({ type: 'date' })
-  dataNascimento: Date; // Data de nascimento
+  @Column({nullable: true})
+  dataNascimento?: Date; // Data de nascimento (opcional)
 
-  @Column({ type: 'varchar', length: 20, unique: true })
-  numeroCarteiraTrabalho?: string; // Número da carteira de trabalho(opcional)
+  @Column({nullable: true})
+  numeroCarteiraTrabalho?: string; // Número da carteira de trabalho (opcional)
 
-  @Column({ type: 'varchar', length: 100, unique: true })
-  email?: string; // E-mail (deve ser único)(opcional)
+  @Column({nullable: true})
+  email?: string; // E-mail (deve ser único) (opcional)
 
-  @Column({ type: 'date' })
-  dataAdmissao?: Date; // Data da admissão(opcional)
+  @Column({nullable: true})
+  dataAdmissao?: Date; // Data da admissão (opcional)
 
-  @Column({ type: 'varchar', length: 50, nullable: true })
+  @Column({nullable: true})
   nomeMae?: string; // Nome da mãe (opcional)
-
-  @Column({ type: 'varchar', length: 50, nullable: true })
+ 
+  @Column({nullable: true})
   nomePai?: string; // Nome do pai (opcional)
 
-  @Column({ type: 'varchar', length: 100, nullable: true })
-  endereco?: string; // Endereço (opcional)
+  @Column({nullable: true})
+  endereco?: string; // Endereço (opcional) 
 
-  @Column({ type: 'varchar', length: 15, nullable: true })
+  @Column({nullable: true})
   telefone?: string; // Telefone (opcional)
 
-  @Column({ type: 'varchar', length: 20, nullable: true })
+  @Column({nullable: true})
   estadoCivil?: string; // Estado civil (opcional)
 
-  @Column({ type: 'varchar', length: 50, nullable: true })
+  @Column({nullable: true})
   funcao?: string; // Função no trabalho (opcional)
 
-  @Column({ type: 'varchar', length: 10, nullable: true })
+  @Column({nullable: true})
   genero?: string; // Gênero (opcional)
 
-  @Column({ type: 'varchar', length: 15, nullable: true })
+  @Column({nullable: true})
   celular?: string; // Celular (opcional)
 
   @CreateDateColumn({ type: 'timestamp' })
-  criadoEm: Date; // Data de criação do registro
+  createdAt: Date; // Data de criação do registro
 
   @UpdateDateColumn({ type: 'timestamp' })
-  atualizadoEm: Date; // Data da última atualização
+  updatedAt: Date; // Data da última atualização
 }

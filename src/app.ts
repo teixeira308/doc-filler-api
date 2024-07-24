@@ -4,6 +4,7 @@ import 'reflect-metadata';
 import { AppDataSource } from './data-source';
 import express from 'express';
 import userRoutes from './routes/userRoutes';
+import personRoutes from './routes/personRoutes';
 
 const app = express();
 app.use(express.json());
@@ -14,6 +15,7 @@ AppDataSource.initialize()
     console.log('Connected to MySQL database');
 
     app.use('/v1/users', userRoutes);
+    app.use('/v1/pessoas', personRoutes); 
 
     app.listen(3000, () => {
       console.log('Server is running on port 3000');
