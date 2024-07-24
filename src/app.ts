@@ -7,10 +7,14 @@ import express from 'express';
 import userRoutes from './routes/userRoutes';
 import personRoutes from './routes/personRoutes';
 
+//swagger config
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('../swagger.json'); // ou swagger.yaml
+
+
 const app = express();
 app.use(express.json());
+//swagger endpoint config
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
