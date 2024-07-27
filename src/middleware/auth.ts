@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken';
 import { AppDataSource } from '../data-source';
 import { User } from '../entity/User';
 
+
 interface AuthenticatedRequest extends Request {
   user?: User;
 }

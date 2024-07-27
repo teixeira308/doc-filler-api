@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 import { AppDataSource } from '../data-source';
 import { Person } from '../entity/Person';
 import { User } from '../entity/User';
+import Logger from "../../src/config/logger"
 
 interface AuthenticatedRequest extends Request {
   user?: User;
@@ -41,9 +42,10 @@ export const createPessoa = async (req: AuthenticatedRequest, res: Response) => 
 
   try {
     const savedPessoa = await pessoaRepository.save(pessoa);
-    res.status(201).json({ id: savedPessoa.id }); // Retorna apenas o ID
+    Logger.info("Created pessoa : "+JSON.stringify(savedPessoa));
+    res.status(201).json(savedPessoa); // Retorna apenas o ID
   } catch (error) {
-    console.error('Error creating pessoa', error);
+     Logger.error('Error creating pessoa', error);
     res.status(500).json({ message: 'Error creating pessoa', error });
   }
 };
@@ -59,13 +61,10 @@ export const getPessoas = async (req: AuthenticatedRequest, res: Response) => {
 
   try {
     const pessoas = await pessoaRepository.find({ where: { userId: user.id } });
-
-    // Remove userId de cada pessoa antes de enviar a resposta
-    const pessoasWithoutUserId = pessoas.map(({ userId, ...rest }) => rest);
-
-    res.status(200).json(pessoasWithoutUserId);
+    Logger.info("Search pessoas : "+JSON.stringify(pessoas));
+    res.status(200).json(pessoas);
   } catch (error) {
-    console.error('Error fetching pessoas', error);
+     Logger.error('Error fetching pessoas', error);
     res.status(500).json({ message: 'Error fetching pessoas', error });
   }
 };
@@ -89,13 +88,10 @@ export const getPessoaById = async (req: AuthenticatedRequest, res: Response) =>
     if (!pessoa) {
       return res.status(404).json({ message: 'Pessoa not found' });
     }
-
-    // Remove userId antes de enviar a resposta
-    const { userId, ...pessoaWithoutUserId } = pessoa;
-
-    res.status(200).json(pessoaWithoutUserId);
+    Logger.info("Search pessoa por ID : "+JSON.stringify(pessoa))
+    res.status(200).json(pessoa);
   } catch (error) {
-    console.error('Error fetching pessoa', error);
+     Logger.error('Error fetching pessoa', error);
     res.status(500).json({ message: 'Error fetching pessoa', error });
   }
 };
@@ -138,13 +134,10 @@ export const updatePessoa = async (req: AuthenticatedRequest, res: Response) => 
     pessoa.celular = celular || pessoa.celular;
 
     const updatedPessoa = await pessoaRepository.save(pessoa);
-
-    // Remove userId antes de enviar a resposta
-    const { userId, ...updatedPessoaWithoutUserId } = updatedPessoa;
-
-    res.status(200).json(updatedPessoaWithoutUserId);
+    Logger.info("Update pessoa : "+JSON.stringify(updatedPessoa));
+    res.status(200).json(updatedPessoa);
   } catch (error) {
-    console.error('Error updating pessoa', error);
+     Logger.error('Error updating pessoa', error);
     res.status(500).json({ message: 'Error updating pessoa', error });
   }
 };
@@ -167,11 +160,12 @@ export const deletePessoa = async (req: AuthenticatedRequest, res: Response) => 
     if (!pessoa) {
       return res.status(404).json({ message: 'Pessoa not found' });
     }
-
+   
     await pessoaRepository.remove(pessoa);
+    Logger.info("Delete pessoa : "+JSON.stringify(pessoa));
     res.status(204).send();
   } catch (error) {
-    console.error('Error deleting pessoa', error);
+     Logger.error('Error deleting pessoa', error);
     res.status(500).json({ message: 'Error deleting pessoa', error });
   }
 };

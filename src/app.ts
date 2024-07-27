@@ -6,6 +6,9 @@ import { AppDataSource } from './data-source';
 import express from 'express';
 import userRoutes from './routes/userRoutes';
 import personRoutes from './routes/personRoutes';
+import Logger from "../src/config/logger"
+import morganMiddleware from "./middleware/morganMiddleware"
+
 
 //swagger config
 const swaggerUi = require('swagger-ui-express');
@@ -14,10 +17,11 @@ const swaggerDocument = require('../swagger.json'); // ou swagger.yaml
 
 const app = express();
 app.use(express.json());
+app.use(morganMiddleware)
 //swagger endpoint config
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-
+const port = process.env.PORT;
 
  
 AppDataSource.initialize()
@@ -28,7 +32,7 @@ AppDataSource.initialize()
     app.use('/v1/pessoas', personRoutes); 
 
     app.listen(3000, () => {
-      console.log('Server is running on port 3000');
+      Logger.info(`Server is running on port ${port}`);
     });
   })
   .catch((error) => {

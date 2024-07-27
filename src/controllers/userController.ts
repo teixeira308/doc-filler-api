@@ -3,6 +3,7 @@ import { AppDataSource } from '../data-source';
 import { User } from '../entity/User';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import Logger from "../../src/config/logger"
 
 export const createUser = async (req: Request, res: Response) => {
   const userRepository = AppDataSource.getRepository(User);
@@ -28,13 +29,14 @@ export const createUser = async (req: Request, res: Response) => {
 
     // Salva o usuário
     const savedUser = await userRepository.save(user);
-
+   
     // Remove o campo de senha antes de retornar o usuário
     const { password: _, ...userWithoutPassword } = savedUser;
+    Logger.info("Created user: "+JSON.stringify(userWithoutPassword))
     res.status(201).json(userWithoutPassword);
 
   } catch (error) {
-    console.error('Error ao criar user', error);
+     Logger.error('Error ao criar user', error);
     res.status(500).json({ message: 'Error ao criar user', error });
   }
 };
@@ -67,9 +69,10 @@ export const loginUser = async (req: Request, res: Response) => {
 
     // Remove the password field before returning user info
     const { password, ...userWithoutPassword } = user;
+    Logger.info("Login user: "+JSON.stringify(userWithoutPassword))
     res.status(200).json({ token, ...userWithoutPassword });
   } catch (error) {
-    console.error('Error ao logar com user', error);
+     Logger.error('Error ao logar com user', error);
     res.status(500).json({ message: 'Error  ao logar com user', error });
   }
 };
@@ -81,9 +84,10 @@ export const getUsers = async (_req: Request, res: Response) => {
     const users = await userRepository.find();
     // Remove the password field from each user
     const usersWithoutPasswords = users.map(({ password, ...userWithoutPassword }) => userWithoutPassword);
+    Logger.info("Get users: "+JSON.stringify(usersWithoutPasswords))
     res.status(200).json(usersWithoutPasswords);
   } catch (error) {
-    console.error('Error fetching users', error);
+     Logger.error('Error fetching users', error);
     res.status(500).json({ message: 'Error fetching users', error });
   }
 };
@@ -104,9 +108,10 @@ export const updateUserStatus = async (req: Request, res: Response) => {
 
     // Remove the password field before returning the updated user
     const { password, ...userWithoutPassword } = user;
+    Logger.info("Update users: "+JSON.stringify(userWithoutPassword))
     res.status(200).json(userWithoutPassword);
   } catch (error) {
-    console.error('Error updating user status', error);
+     Logger.error('Error updating user status', error);
     res.status(500).json({ message: 'Error updating user status', error });
   }
 };

@@ -1,0 +1,85 @@
+2024-07-26 20:53:29:5329 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 20:54:08:548 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 20:55:24:5524 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 20:56:51:5651 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 20:57:00:570 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 20:57:37:5737 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 20:57:45:5745 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 20:58:15:5815 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 20:58:57:5857 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 20:59:04:594 - [32minfo[39m: [32mCreated user: [object Object][39m
+2024-07-26 20:59:14:5914 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 20:59:17:5917 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 20:59:43:5943 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 20:59:47:5947 - [32minfo[39m: [32mCreated user: [object Object][39m
+2024-07-26 20:59:58:5958 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:00:02:02 - [32minfo[39m: [32mCreated user: [39m
+2024-07-26 21:00:09:09 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:00:13:013 - [32minfo[39m: [32mCreated user: [39m
+2024-07-26 21:01:01:11 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:01:02:12 - [32minfo[39m: [32mCreated user: [39m
+2024-07-26 21:01:21:121 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:01:25:125 - [32minfo[39m: [32mCreated user: [39m
+2024-07-26 21:01:33:133 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:01:44:144 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:01:48:148 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:01:54:154 - [32minfo[39m: [32mCreated user: {"name":"João Paulo","email":"joao9@email.com","status":"active","id":10,"createdAt":"2024-07-27T03:01:54.498Z","updatedAt":"2024-07-27T03:01:54.498Z"}[39m
+2024-07-26 21:02:39:239 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:03:04:34 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:03:10:310 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:03:34:334 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:03:39:339 - [32minfo[39m: [32mCreated person : {"nome":"João Silva","cpf":null,"rg":null,"dataNascimento":null,"numeroCarteiraTrabalho":null,"email":null,"dataAdmissao":null,"nomeMae":null,"nomePai":null,"endereco":null,"telefone":null,"estadoCivil":null,"funcao":null,"genero":null,"celular":null,"userId":1,"id":11,"createdAt":"2024-07-27T03:03:39.103Z","updatedAt":"2024-07-27T03:03:39.103Z"}[39m
+2024-07-26 21:03:48:348 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:05:11:511 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:05:30:530 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:06:14:614 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:06:21:621 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:06:27:627 - [32minfo[39m: [32mCreated person : {"nome":"João Silva","cpf":null,"rg":null,"dataNascimento":null,"numeroCarteiraTrabalho":null,"email":null,"dataAdmissao":null,"nomeMae":null,"nomePai":null,"endereco":null,"telefone":null,"estadoCivil":null,"funcao":null,"genero":null,"celular":null,"userId":1,"id":12,"createdAt":"2024-07-27T03:06:27.195Z","updatedAt":"2024-07-27T03:06:27.195Z"}[39m
+2024-07-26 21:06:30:630 - [32minfo[39m: [32mSearch person : {"id":6,"userId":1,"nome":"João Silva","cpf":null,"rg":null,"dataNascimento":null,"numeroCarteiraTrabalho":null,"email":null,"dataAdmissao":null,"nomeMae":null,"nomePai":null,"endereco":null,"telefone":null,"estadoCivil":null,"funcao":null,"genero":null,"celular":null,"createdAt":"2024-07-27T02:41:29.900Z","updatedAt":"2024-07-27T02:41:29.900Z"}[39m
+2024-07-26 21:07:16:716 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:07:18:718 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:07:39:739 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:07:46:746 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:07:49:749 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:08:17:817 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:10:22:1022 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:10:39:1039 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:10:57:1057 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:15:50:1550 - [32minfo[39m: [32mCreated pessoa : {"nome":"João Silva","cpf":null,"rg":null,"dataNascimento":null,"numeroCarteiraTrabalho":null,"email":null,"dataAdmissao":null,"nomeMae":null,"nomePai":null,"endereco":null,"telefone":null,"estadoCivil":null,"funcao":null,"genero":null,"celular":null,"userId":1,"id":13,"createdAt":"2024-07-27T03:15:50.321Z","updatedAt":"2024-07-27T03:15:50.321Z"}[39m
+2024-07-26 21:19:12:1912 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:19:14:1914 - [32minfo[39m: [32mCreated pessoa : {"nome":"João Silva","cpf":null,"rg":null,"dataNascimento":null,"numeroCarteiraTrabalho":null,"email":null,"dataAdmissao":null,"nomeMae":null,"nomePai":null,"endereco":null,"telefone":null,"estadoCivil":null,"funcao":null,"genero":null,"celular":null,"userId":1,"id":14,"createdAt":"2024-07-27T03:19:14.644Z","updatedAt":"2024-07-27T03:19:14.644Z"}[39m
+2024-07-26 21:19:42:1942 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:19:45:1945 - [32minfo[39m: [32mCreated pessoa : {"nome":"João Silva","cpf":null,"rg":null,"dataNascimento":null,"numeroCarteiraTrabalho":null,"email":null,"dataAdmissao":null,"nomeMae":null,"nomePai":null,"endereco":null,"telefone":null,"estadoCivil":null,"funcao":null,"genero":null,"celular":null,"userId":1,"id":15,"createdAt":"2024-07-27T03:19:45.351Z","updatedAt":"2024-07-27T03:19:45.351Z"}[39m
+2024-07-26 21:20:03:203 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:20:11:2011 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:20:15:2015 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:20:20:2020 - [32minfo[39m: [32mCreated pessoa : {"nome":"João Silva","cpf":null,"rg":null,"dataNascimento":null,"numeroCarteiraTrabalho":null,"email":null,"dataAdmissao":null,"nomeMae":null,"nomePai":null,"endereco":null,"telefone":null,"estadoCivil":null,"funcao":null,"genero":null,"celular":null,"userId":1,"id":16,"createdAt":"2024-07-27T03:20:20.571Z","updatedAt":"2024-07-27T03:20:20.571Z"}[39m
+2024-07-26 21:20:20:2020 - [35mhttp[39m: [35mPOST /v1/pessoas 201 - - 26.277 ms [39m
+[35m[39m
+2024-07-26 21:24:25:2425 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:24:52:2452 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:25:10:2510 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:25:18:2518 - [35mhttp[39m: [35mPOST /v1/users/register - - - - ms [39m
+[35m[39m
+2024-07-26 21:25:54:2554 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:25:56:2556 - [35mhttp[39m: [35mPOST /v1/users/register 400 - - 12.529 ms [39m
+[35m[39m
+2024-07-26 21:26:02:262 - [35mhttp[39m: [35mPOST /v1/users/register 400 - - 3.243 ms [39m
+[35m[39m
+2024-07-26 21:26:08:268 - [31merror[39m: [31mError ao criar user data and salt arguments required[39m
+2024-07-26 21:26:08:268 - [35mhttp[39m: [35mPOST /v1/users/register 500 - - 10.426 ms [39m
+[35m[39m
+2024-07-26 21:26:55:2655 - [31merror[39m: [31mError ao criar user data and salt arguments required[39m
+2024-07-26 21:26:55:2655 - [35mhttp[39m: [35mPOST /v1/users/register 500 - - 3.212 ms [39m
+[35m[39m
+2024-07-26 21:27:08:278 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:27:08:278 - [31merror[39m: [31mError ao criar user data and salt arguments required[39m
+2024-07-26 21:27:08:278 - [35mhttp[39m: [35mPOST /v1/users/register 500 - - 19.553 ms [39m
+[35m[39m
+2024-07-26 21:27:40:2740 - [32minfo[39m: [32mServer is running on port 3000[39m
+2024-07-26 21:27:43:2743 - [35mhttp[39m: [35mPOST /v1/users/register 422 - - 5.322 ms [39m
+[35m[39m
+2024-07-26 21:28:01:281 - [35mhttp[39m: [35mPOST /v1/users/register 422 - - 1.373 ms [39m
+[35m[39m
+2024-07-26 21:28:04:284 - [35mhttp[39m: [35mPOST /v1/users/register 422 - - 0.972 ms [39m
+[35m[39m
