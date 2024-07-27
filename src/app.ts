@@ -6,6 +6,7 @@ import { AppDataSource } from './data-source';
 import express from 'express';
 import userRoutes from './routes/userRoutes';
 import personRoutes from './routes/personRoutes';
+import templateRoutes from './routes/templateRoutes';
 import Logger from "../src/config/logger"
 import morganMiddleware from "./middleware/morganMiddleware"
 
@@ -30,6 +31,7 @@ AppDataSource.initialize()
 
     app.use('/v1/users', userRoutes);
     app.use('/v1/pessoas', personRoutes); 
+    app.use('/v1/templates', templateRoutes); 
 
     app.listen(3000, () => {
       Logger.info(`Server is running on port ${port}`);

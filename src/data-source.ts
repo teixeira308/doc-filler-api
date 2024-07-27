@@ -2,6 +2,7 @@
 import { DataSource } from 'typeorm';
 import { User } from './entity/User';
 import { Person } from './entity/Person';
+import { Template } from './entity/Template';
 
 const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASS;
@@ -20,6 +21,6 @@ export const AppDataSource = new DataSource({
   username: dbUser,
   password: dbPassword,
   database: dbName,
-  entities: [User,Person],
+  entities: [User,Person,Template],
   synchronize: true,
 });
