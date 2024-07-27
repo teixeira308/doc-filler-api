@@ -26,10 +26,10 @@ export const createPessoa = async (req: AuthenticatedRequest, res: Response) => 
   pessoa.nome = nome;
   pessoa.cpf = cpf;
   pessoa.rg = rg;
-  pessoa.dataNascimento = dataNascimento ? new Date(dataNascimento) : undefined;
+  pessoa.dataNascimento = dataNascimento;
   pessoa.numeroCarteiraTrabalho = numeroCarteiraTrabalho;
   pessoa.email = email;
-  pessoa.dataAdmissao = dataAdmissao ? new Date(dataAdmissao) : undefined;
+  pessoa.dataAdmissao = dataAdmissao;
   pessoa.nomeMae = nomeMae;
   pessoa.nomePai = nomePai;
   pessoa.endereco = endereco;
