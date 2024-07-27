@@ -6,9 +6,10 @@ import { authenticateToken } from '../middleware/auth';
 
 
 
+
 const router = Router();
 
-router.post('/', authenticateToken, uploadSingleFile,createTemplate);
+router.post('/', authenticateToken,uploadSingleFile,createTemplate);
 router.get('/',authenticateToken, getTemplates);
 router.get('/:id', authenticateToken,getTemplateById);
 router.get('/:id/download', authenticateToken,downloadTemplateById);

@@ -11,6 +11,5 @@ export const userCreateValidation = () => {
     body("password")
     .isString()
     .withMessage("O password é obrigatório."),
-   
   ];
 };
