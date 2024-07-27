@@ -80,5 +80,13 @@ DELETE  /v1/pessoas/:id <br/>
 GET     /v1/pessoas/:id <br/>
 GET     /v1/pessoas <br/>
 
+Templates<br/>
+POST    /v1/templates <br/>
+PUT     /v1/templates/:id <br/>
+DELETE  /v1/templates/:id <br/>
+GET     /v1/templates/:id <br/>
+GET     /v1/templates <br/>
+GET     /v1/templates/:id/download?arquivo={archive-name} <br/>
+GET     /v1/templates/:idtemplate/person/:idpessoa/filled <br/>
 
 
