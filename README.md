@@ -10,7 +10,7 @@ With this solution it is possible to generate several documents automatically, w
 
 # Doc Filler API - Backend Project
 
-This is a backend project developed with TypeScript, MySQL, Express, typeorm, bcrypt, and jsonwebtoken.
+This is a backend project developed with TypeScript, MySQL, Express.
 
 ## Technologies Used
 
@@ -20,6 +20,12 @@ This is a backend project developed with TypeScript, MySQL, Express, typeorm, bc
 - **TypeORM**: An ORM (Object-Relational Mapping) library for TypeScript and JavaScript (ES7, ES6, ES5).
 - **bcrypt**: A library to hash passwords.
 - **jsonwebtoken**: A library to work with JSON Web Tokens (JWT).
+- **winston**: A versatile logging library for Node.js.
+- **swagger-jsdoc**: Generates Swagger/OpenAPI documentation from JSDoc comments.
+- **swagger-ui-express** : Serves Swagger UI for visualizing and interacting with API documentation.
+- **pizzip**: A library for handling ZIP files, used in conjunction with `docxtemplater`.
+- **docxtemplater**: A library to generate `.docx` files based on templates.
+
 
 ## Installation
 
