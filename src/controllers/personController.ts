@@ -121,10 +121,10 @@ export const updatePessoa = async (req: AuthenticatedRequest, res: Response) => 
     pessoa.nome = nome || pessoa.nome;
     pessoa.cpf = cpf || pessoa.cpf;
     pessoa.rg = rg || pessoa.rg;
-    pessoa.dataNascimento = dataNascimento ? new Date(dataNascimento) : pessoa.dataNascimento;
+    pessoa.dataNascimento = dataNascimento || pessoa.dataNascimento;
     pessoa.numeroCarteiraTrabalho = numeroCarteiraTrabalho || pessoa.numeroCarteiraTrabalho;
     pessoa.email = email || pessoa.email;
-    pessoa.dataAdmissao = dataAdmissao ? new Date(dataAdmissao) : pessoa.dataAdmissao;
+    pessoa.dataAdmissao = dataAdmissao ||  pessoa.dataAdmissao;
     pessoa.nomeMae = nomeMae || pessoa.nomeMae;
     pessoa.nomePai = nomePai || pessoa.nomePai;
     pessoa.telefone = telefone || pessoa.telefone;
@@ -132,6 +132,7 @@ export const updatePessoa = async (req: AuthenticatedRequest, res: Response) => 
     pessoa.funcao = funcao || pessoa.funcao;
     pessoa.genero = genero || pessoa.genero;
     pessoa.celular = celular || pessoa.celular;
+    pessoa.endereco = endereco || pessoa.endereco;
 
     const updatedPessoa = await pessoaRepository.save(pessoa);
     Logger.info("Update pessoa : "+JSON.stringify(updatedPessoa));

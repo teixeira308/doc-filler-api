@@ -23,7 +23,7 @@ export class Person {
   rg?: string;
 
   @Column({ nullable: true })
-  dataNascimento?: Date;
+  dataNascimento?: string;
 
   @Column({ nullable: true })
   numeroCarteiraTrabalho?: string;
@@ -32,7 +32,7 @@ export class Person {
   email?: string;
 
   @Column({ nullable: true })
-  dataAdmissao?: Date;
+  dataAdmissao?: string;
 
   @Column({ nullable: true })
   nomeMae?: string;
